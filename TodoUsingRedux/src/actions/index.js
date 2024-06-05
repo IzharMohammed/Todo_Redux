@@ -1,5 +1,8 @@
 import { ADD_TODO , EDIT_TODO , REMOVE_TODO } from "../constants";
 
+
+/* ACTION CREATORS */
+
 export const add = (todo) =>({
 type : ADD_TODO , 
 payload : todo
