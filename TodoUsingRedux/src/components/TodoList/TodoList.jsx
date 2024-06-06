@@ -11,12 +11,14 @@ function TodoList() {
 
 
   return (
-    <div>
+ <div className="mt-8 ">
+     <div className="flex flex-col gap-9 items-center  ">
 <TodoInput />
 {
   todoList.map(todo => <Todo id={todo.id} name = {todo.name} />)
 }
     </div>
+ </div>
   );
 }
 

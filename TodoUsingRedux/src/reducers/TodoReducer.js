@@ -15,16 +15,22 @@ export const initialTodos = [
 ]
 
 
-export default function todoReducer(todos=initialTodos,action){
+export default function todoReducer(todos=[],action){
 
 if(action.type == ADD_TODO){
 return [...todos , {id : action.payload.id , name : action.payload.name}]
 }
 
-/* if(action.type == EDIT_TODO){
-
+ if(action.type == EDIT_TODO){
+    return todos.map(todo=>{
+        if(todo.id== action.payload.id){
+           return {name : action.payload.name}
+        }
+        return todo;
+    })
 }
- */
+
+
 if(action.type == REMOVE_TODO){
 return todos.filter(todo => todo.id!=action.payload.id);
 }

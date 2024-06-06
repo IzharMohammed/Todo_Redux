@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 function TodoInput() {
   const [todoText, setTodoText] = useState("");
+
   const dispatch = useDispatch();
+  
   const todoList = useSelector(state=>{
     return state.todo
 });
@@ -18,7 +20,7 @@ function TodoInput() {
 
   return (
     <div>
-      <input
+      <input  
         type="text"
         value={todoText}
         onChange={(e) => setTodoText(e.target.value)}
